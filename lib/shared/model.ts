@@ -10,3 +10,11 @@ export interface LinkModel {
   url: string;
   isExternal: boolean;
 }
+
+export interface CardModel {
+  href: string;
+  title: string;
+  description: string;
+  ctaLabel: string;
+  cover: ImageModel;
+}

@@ -13,3 +13,10 @@ export interface StrapiLinkDTO {
   url: string;
   isExternal: boolean;
 }
+
+export interface StrapiSeoDTO {
+  id: number;
+  metaTitle: string;
+  metaDescription: string;
+  shareImage: StrapiImageDTO;
+}
