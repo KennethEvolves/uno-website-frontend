@@ -32,17 +32,11 @@ const AcademicsPage = async () => {
 
       <div className="mt-8 md:mt-16">
         {ugSection && (
-          <ProgramSection
-            data={ugSection}
-            basePath="oferta-academica/licenciaturas"
-          />
+          <ProgramSection data={ugSection} basePath="oferta-educativa" />
         )}
 
         {pgSection && (
-          <ProgramSection
-            data={pgSection}
-            basePath="oferta-academica/posgrados"
-          />
+          <ProgramSection data={pgSection} basePath="oferta-educativa" />
         )}
       </div>
     </main>

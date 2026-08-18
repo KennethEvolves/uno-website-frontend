@@ -21,7 +21,7 @@ export const ProgramSection = ({ data, basePath }: Props) => {
             key={card.href}
             title={card.title}
             description={card.description}
-            href={`/${basePath}/${card.href}`}
+            href={`${basePath}/${card.href}`}
             ctaLabel={card.ctaLabel}
             cover={card.cover}
           />

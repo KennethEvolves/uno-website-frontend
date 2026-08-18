@@ -30,17 +30,11 @@ const HomePage = async () => {
       <div className="m-18"></div>
 
       {ugSection && (
-        <ProgramSection
-          data={ugSection}
-          basePath="oferta-academica/licenciaturas"
-        />
+        <ProgramSection data={ugSection} basePath="oferta-educativa" />
       )}
 
       {pgSection && (
-        <ProgramSection
-          data={pgSection}
-          basePath="oferta-academica/posgrados"
-        />
+        <ProgramSection data={pgSection} basePath="oferta-educativa" />
       )}
     </>
   );

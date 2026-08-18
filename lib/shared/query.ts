@@ -20,14 +20,17 @@ export const query_seo = {
 };
 
 export const getDataBySlug = (slug: string, query: object): string => {
-  const data = qs.stringify({
-    ...query,
-    filters: {
-      slug: {
-        $eq: slug,
+  const data = qs.stringify(
+    {
+      ...query,
+      filters: {
+        slug: {
+          $eq: slug,
+        },
       },
     },
-  });
+    { encodeValuesOnly: true },
+  );
 
   return data;
 };

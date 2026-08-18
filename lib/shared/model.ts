@@ -31,3 +31,15 @@ export interface PageHeaderModel {
   description: string;
   backgroundImage: ImageModel;
 }
+
+export type Params = Promise<{ slug: string }>;
+
+export interface Props {
+  params: Params;
+}
+
+export interface LabelValueModel {
+  label: string;
+  value: string;
+  iconName: string;
+}
