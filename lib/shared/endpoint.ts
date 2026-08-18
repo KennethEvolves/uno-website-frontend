@@ -4,4 +4,6 @@ export const endpoints = {
   academics: "academics-page",
   programs: "academic-programs",
   about: "about-us-page",
+  research: "research-page",
+  researchers: "researchers",
 };
