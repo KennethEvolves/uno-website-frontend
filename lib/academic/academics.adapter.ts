@@ -4,7 +4,7 @@ import { adaptImage } from "../shared/data.adapter";
 import { AcademicsPageDTO, PageHeaderDTO } from "./academics.dto";
 import { AcademicsPageModel } from "./academics.model";
 
-const adaptPageHeader = (dto: PageHeaderDTO): PageHeaderModel => {
+export const adaptPageHeader = (dto: PageHeaderDTO): PageHeaderModel => {
   return {
     subtitle: dto.subtitle,
     title: dto.title,

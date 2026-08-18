@@ -29,6 +29,8 @@ import {
   FileIcon,
   DownloadIcon,
   ShieldIcon,
+  SponsorTiersIcon,
+  FlagIcon,
 } from "@primer/octicons-react";
 
 const ICON_MAP: Record<string, ElementType> = {
@@ -57,6 +59,8 @@ const ICON_MAP: Record<string, ElementType> = {
   document: FileIcon,
   download: DownloadIcon,
   shield: ShieldIcon,
+  tiers: SponsorTiersIcon,
+  flag: FlagIcon,
 };
 
 export type IconName = keyof typeof ICON_MAP;

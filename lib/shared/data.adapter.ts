@@ -18,7 +18,9 @@ export const seoAdapter = (dto?: StrapiSeoDTO): SeoModel => {
   };
 };
 
-export const adaptImage = (imageDto: StrapiImageDTO): ImageModel => {
+export const adaptImage = (
+  imageDto: StrapiImageDTO | undefined,
+): ImageModel => {
   if (!imageDto) {
     return { url: "", alternativeText: "", width: 0, height: 0 };
   }

@@ -8,6 +8,14 @@ export const query_link = {
   fields: ["label", "url", "isExternal"],
 };
 
+export const query_page_header = {
+  populate: {
+    backgroundImage: {
+      fields: ["url", "alternativeText", "width", "height"],
+    },
+  },
+};
+
 export const query_seo = {
   populate: {
     seo: {
