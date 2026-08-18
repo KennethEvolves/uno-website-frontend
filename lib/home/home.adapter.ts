@@ -1,19 +1,7 @@
-import { CardModel, ImageModel, StrapiImageDTO } from "../shared";
+import { CardModel } from "../shared";
+import { adaptImage } from "../shared/data.adapter";
 import { AcademicProgramDTO, HomeDTO, ProgramsSectionDTO } from "./home.dto";
 import { HomeModel, ProgramSectionModel } from "./home.model";
-
-const adaptImage = (imageDto: StrapiImageDTO): ImageModel => {
-  if (!imageDto) {
-    return { url: "", alternativeText: "", width: 0, height: 0 };
-  }
-
-  return {
-    url: imageDto.url,
-    alternativeText: imageDto.alternativeText || "",
-    width: imageDto.width || 0,
-    height: imageDto.height || 0,
-  };
-};
 
 const adaptProgramCard = (programDto: AcademicProgramDTO): CardModel => {
   return {
@@ -25,7 +13,7 @@ const adaptProgramCard = (programDto: AcademicProgramDTO): CardModel => {
   };
 };
 
-const adaptProgramSection = (
+export const adaptProgramSection = (
   sectionDto: ProgramsSectionDTO,
 ): ProgramSectionModel => {
   return {

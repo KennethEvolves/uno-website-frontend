@@ -18,3 +18,16 @@ export interface CardModel {
   ctaLabel: string;
   cover: ImageModel;
 }
+
+export interface SeoModel {
+  title: string;
+  description: string;
+  image: ImageModel;
+}
+
+export interface PageHeaderModel {
+  subtitle: string;
+  title: string;
+  description: string;
+  backgroundImage: ImageModel;
+}
