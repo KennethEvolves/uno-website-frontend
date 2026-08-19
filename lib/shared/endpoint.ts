@@ -6,4 +6,6 @@ export const endpoints = {
   about: "about-us-page",
   research: "research-page",
   researchers: "researchers",
+  posts: "posts",
+  postspage: "posts-page",
 };
