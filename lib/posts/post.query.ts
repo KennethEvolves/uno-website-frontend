@@ -95,3 +95,53 @@ export const getPostBySlugQuery = (slug: string) => {
     { encodeValuesOnly: true },
   );
 };
+
+export const getLatestNewsQuery = (limit: number = 8) => {
+  const currentDate = new Date().toISOString();
+
+  return qs.stringify(
+    {
+      sort: ["publishDate:desc"],
+      pagination: {
+        page: 1,
+        pageSize: limit,
+      },
+
+      fields: ["title", "slug", "type", "excerpt", "publishDate", "ctaLabel"],
+
+      filters: {
+        $or: [
+          {
+            type: {
+              $eq: "noticia",
+            },
+          },
+          {
+            type: {
+              $eq: "convocatoria",
+            },
+            callsDetails: {
+              expirationDate: {
+                $gte: currentDate,
+              },
+            },
+          },
+          {
+            type: {
+              $eq: "evento",
+            },
+            eventsDetails: {
+              endDate: {
+                $gte: currentDate,
+              },
+            },
+          },
+        ],
+      },
+      populate: {
+        coverImage: query_image,
+      },
+    },
+    { encodeValuesOnly: true },
+  );
+};

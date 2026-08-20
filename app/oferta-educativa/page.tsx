@@ -30,7 +30,7 @@ const AcademicsPage = async () => {
     <main className="flex flex-col w-full pb-20">
       <PageHeader data={header} />
 
-      <div className="mt-8 md:mt-16">
+      <div className="">
         {ugSection && (
           <ProgramSection data={ugSection} basePath="oferta-educativa" />
         )}

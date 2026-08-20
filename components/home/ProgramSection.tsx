@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/Card";
-import { ProgramSectionModel } from "../../lib/home/home.model";
+import { ProgramSectionModel } from "@/lib/home/home.model";
 
 interface Props {
   data: ProgramSectionModel;
@@ -10,7 +10,7 @@ export const ProgramSection = ({ data, basePath }: Props) => {
   const { title, programCards } = data;
 
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center mb-16">
       <h1 className="w-full py-16 text-center text-3xl font-extrabold tracking-tight text-uno-secondary uppercase">
         {title}
       </h1>

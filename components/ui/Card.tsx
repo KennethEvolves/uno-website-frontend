@@ -41,7 +41,7 @@ export const Card = ({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="group relative z-10 h-125 w-full py-8 will-change-transform hover:z-20 lg:hover:shadow-2xl"
+      className="group relative z-10 h-125 w-full py-8 will-change-transform hover:z-20 lg:hover:shadow-2xl bg-linear-to-tr from-[#1e1e1e] via-[#3a1114] to-[#1e1e1e]"
     >
       <Link href={href}>
         <div className="absolute inset-0 transition-transform duration-500 lg:group-hover:-translate-y-7 lg:group-hover:scale-110">

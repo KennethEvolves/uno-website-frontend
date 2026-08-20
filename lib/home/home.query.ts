@@ -21,6 +21,22 @@ export const getHomePageQuery = () => {
                 },
               },
             },
+            "home.home-header": {
+              populate: {
+                link: {
+                  populate: "*",
+                },
+                backgroundImage: query_image,
+              },
+            },
+            "shared.banner": {
+              populate: {
+                link: {
+                  populate: "*",
+                },
+                backgroundImage: query_image,
+              },
+            },
           },
         },
       },

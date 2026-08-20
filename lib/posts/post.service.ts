@@ -1,5 +1,9 @@
 import { endpoints, getStrapiData } from "../shared";
-import { getPostBySlugQuery, getPostsQuery } from "./post.query";
+import {
+  getLatestNewsQuery,
+  getPostBySlugQuery,
+  getPostsQuery,
+} from "./post.query";
 import { adaptPaginatedPosts, adaptPost } from "./post.adapter";
 import type { PaginatedPostsModel, PostModel } from "./post.model";
 
@@ -48,5 +52,31 @@ export const getPostBySlug = async (
       error,
     );
     return undefined;
+  }
+};
+
+export const getLatestNews = async (
+  limit: number = 5,
+): Promise<PostModel[]> => {
+  try {
+    const query = getLatestNewsQuery(limit);
+    const endpoint = endpoints.posts || "posts";
+
+    const response = await getStrapiData(`/api/${endpoint}?${query}`);
+
+    if (!response?.data || response.data.length === 0) {
+      console.warn(
+        `[Post Service] No se encontraron noticias recientes para el Home.`,
+      );
+      return [];
+    }
+
+    return response.data.map(adaptPost);
+  } catch (error) {
+    console.error(
+      `[Post Service] Error crítico al obtener las últimas noticias:`,
+      error,
+    );
+    return [];
   }
 };

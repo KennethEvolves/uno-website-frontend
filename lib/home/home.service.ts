@@ -1,6 +1,6 @@
 import { endpoints, getStrapiData } from "../shared";
 import { adaptHome } from "./home.adapter";
-import { HomeModel } from "./home.model";
+import type { HomeModel } from "./home.model";
 import { getHomePageQuery } from "./home.query";
 
 export const getHome = async (): Promise<HomeModel> => {
