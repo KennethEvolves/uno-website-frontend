@@ -93,7 +93,7 @@ export const CallDetailsInfo = ({ data }: Props) => {
             href={data.attachedFile.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 rounded-full bg-uno-secondary px-8 py-4 text-sm font-bold tracking-widest text-white uppercase transition-all hover:bg-black hover:scale-105 shadow-lg"
+            className="group flex items-center gap-3 rounded-sm bg-secondary px-8 py-4 text-sm font-bold tracking-widest text-white uppercase transition-all hover:bg-black hover:scale-105 shadow-lg"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ export const CallDetailsInfo = ({ data }: Props) => {
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="transition-transform group-hover:-translate-y-1"
+              className="transition-transform duration-300 group-hover:-translate-y-1"
             >
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
