@@ -10,4 +10,7 @@ export const endpoints = {
   postspage: "posts-page",
   socialservicepage: "social-service-page",
   workplacement: "work-placement-page",
+  servicespage: "services-page",
+  universitypage: "university-page",
+  studentspage: "students-page",
 };

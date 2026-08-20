@@ -42,3 +42,23 @@ export const getDataBySlug = (slug: string, query: object): string => {
 
   return data;
 };
+
+export const getGenericPageQuery = () => {
+  return qs.stringify(
+    {
+      populate: {
+        header: query_page_header || {
+          populate: {
+            backgroundImage: query_image,
+          },
+        },
+        cards: {
+          populate: {
+            backgroundImage: query_image,
+          },
+        },
+      },
+    },
+    { encodeValuesOnly: true },
+  );
+};

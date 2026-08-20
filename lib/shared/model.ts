@@ -43,3 +43,8 @@ export interface LabelValueModel {
   value: string;
   iconName: string;
 }
+
+export interface GenericPageModel {
+  header: PageHeaderModel;
+  cards: CardModel[];
+}

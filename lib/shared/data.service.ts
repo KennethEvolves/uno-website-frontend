@@ -1,8 +1,8 @@
 import qs from "qs";
-import type { SeoModel } from "./model";
+import type { GenericPageModel, SeoModel } from "./model";
 import { getStrapiData } from "./strapi.api";
-import { seoAdapter } from "./data.adapter";
-import { getDataBySlug } from "./query";
+import { adaptGenericPage, seoAdapter } from "./data.adapter";
+import { getDataBySlug, getGenericPageQuery } from "./query";
 
 interface Params {
   slug?: string;
@@ -33,5 +33,31 @@ export const getSeo = async (params: Params): Promise<SeoModel> => {
       error,
     );
     return seoAdapter(undefined);
+  }
+};
+
+export const getGenericPage = async (
+  endpoint: string,
+): Promise<GenericPageModel> => {
+  try {
+    const query = getGenericPageQuery();
+
+    const response = await getStrapiData(`/api/${endpoint}?${query}`);
+    const dto = response?.data;
+
+    if (!dto) {
+      console.warn(
+        `[Generic Page Service] No se encontraron datos para el endpoint: ${endpoint}`,
+      );
+      return adaptGenericPage(undefined);
+    }
+
+    return adaptGenericPage(dto);
+  } catch (error) {
+    console.error(
+      `[Generic Page Service] Error crítico al obtener la página ${endpoint}:`,
+      error,
+    );
+    return adaptGenericPage(undefined);
   }
 };

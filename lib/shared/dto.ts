@@ -1,3 +1,5 @@
+import { PageHeaderDTO } from "../academic/academics.dto";
+
 export interface StrapiImageDTO {
   id: number;
   documentId: string;
@@ -19,4 +21,19 @@ export interface StrapiSeoDTO {
   metaTitle: string;
   metaDescription: string;
   shareImage: StrapiImageDTO;
+}
+export interface CardDTO {
+  id: number;
+  title: string;
+  ctaLabel?: string;
+  description?: string;
+  backgroundImage?: StrapiImageDTO;
+  url?: string;
+}
+
+export interface GenericPageDTO {
+  id: number;
+  documentId: string;
+  header: PageHeaderDTO;
+  cards: CardDTO[];
 }
