@@ -31,6 +31,7 @@ import {
   ShieldIcon,
   SponsorTiersIcon,
   FlagIcon,
+  PlayIcon,
 } from "@primer/octicons-react";
 
 const ICON_MAP: Record<string, ElementType> = {
@@ -61,6 +62,7 @@ const ICON_MAP: Record<string, ElementType> = {
   shield: ShieldIcon,
   tiers: SponsorTiersIcon,
   flag: FlagIcon,
+  play: PlayIcon,
 };
 
 export type IconName = keyof typeof ICON_MAP;

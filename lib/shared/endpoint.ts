@@ -8,4 +8,6 @@ export const endpoints = {
   researchers: "researchers",
   posts: "posts",
   postspage: "posts-page",
+  socialservicepage: "social-service-page",
+  workplacement: "work-placement-page",
 };
