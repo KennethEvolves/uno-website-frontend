@@ -4,7 +4,7 @@ import { getSeo, endpoints, query_seo } from "@/lib/shared";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { getPostsPage } from "../../lib/posts-page/posts-page.service";
 import { getPosts } from "@/lib/posts/post.service";
-import { PostsGrid } from "@/components/posts/PostsGrid";
+import { PostsGrid } from "@/components/posts-page/PostsGrid";
 
 export async function generateMetadata(): Promise<Metadata> {
   const args = {

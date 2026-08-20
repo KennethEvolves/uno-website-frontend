@@ -44,7 +44,8 @@ export const DynamicCard = ({
               src={src}
               alt={alt || title}
               fill
-              sizes="100vw"
+              sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 80vw, 50vw"
+              quality={90}
               className="object-cover"
             />
           )}

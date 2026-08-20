@@ -62,3 +62,36 @@ export const getPostsQuery = (page: number = 1, pageSize: number = 6) => {
     { encodeValuesOnly: true },
   );
 };
+
+export const getPostBySlugQuery = (slug: string) => {
+  return qs.stringify(
+    {
+      filters: {
+        slug: {
+          $eq: slug,
+        },
+      },
+
+      fields: ["title", "type", "content", "publishDate", "autor"],
+      populate: {
+        coverImage: query_image,
+
+        newsDetails: {
+          populate: {
+            gallery: query_image,
+          },
+        },
+        callsDetails: {
+          populate: {
+            attachedFile: query_image,
+            steps: { populate: "*" },
+          },
+        },
+        eventsDetails: {
+          populate: "*",
+        },
+      },
+    },
+    { encodeValuesOnly: true },
+  );
+};
