@@ -13,4 +13,5 @@ export const endpoints = {
   servicespage: "services-page",
   universitypage: "university-page",
   studentspage: "students-page",
+  footer: "footer",
 };
