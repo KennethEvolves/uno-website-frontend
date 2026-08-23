@@ -1,9 +1,10 @@
 import { LinkModel, StrapiLinkDTO } from "@/lib/shared";
 import { NavbarDTO, StrapiNavItemDTO } from "./navbar.dto";
 import { NavbarModel, NavItemModel } from "./navbar.model";
+import { adaptImage } from "@/lib/shared/data.adapter";
 
 export const adaptNavbar = (dto: NavbarDTO): NavbarModel => {
-  const { mainMenu, governmentLogo, mainLogo } = dto;
+  const { mainMenu } = dto;
 
   const BASE_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
@@ -30,17 +31,7 @@ export const adaptNavbar = (dto: NavbarDTO): NavbarModel => {
 
   return {
     mainMenu: adaptMenu(mainMenu),
-    governmentLogo: {
-      url: `${BASE_URL}${governmentLogo.url}`,
-      alternativeText: governmentLogo.alternativeText,
-      width: governmentLogo.width,
-      height: governmentLogo.height,
-    },
-    mainLogo: {
-      url: `${BASE_URL}${mainLogo.url}`,
-      alternativeText: mainLogo.alternativeText,
-      width: mainLogo.width,
-      height: mainLogo.height,
-    },
+    governmentLogo: adaptImage(dto?.governmentLogo),
+    mainLogo: adaptImage(dto?.mainLogo),
   };
 };
