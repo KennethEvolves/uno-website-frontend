@@ -20,6 +20,7 @@ const container: Variants = {
 };
 
 export const ResearcherSection = ({ data, basePath }: Props) => {
+  if (!data) return null;
   const { title, researchers } = data;
 
   if (!researchers || researchers.length === 0) return null;
