@@ -1,8 +1,13 @@
 export const getStrapiData = async (url: string) => {
-  const BASE_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
+  const BASE_URL =
+    process.env.STRAPI_INTERNAL_URL || process.env.NEXT_PUBLIC_STRAPI_URL;
 
   try {
-    const response = await fetch(`${BASE_URL}${url}`);
+    const response = await fetch(`${BASE_URL}${url}`, {
+      next: {
+        revalidate: 3000,
+      },
+    });
 
     if (!response.ok) {
       console.warn(
