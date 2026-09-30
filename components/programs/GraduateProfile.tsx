@@ -49,6 +49,7 @@ export const GraduateProfile = ({ data }: Props) => {
 
   const {
     title = "Perfil de Egreso",
+    summary = "",
     knowledge = [],
     skills = [],
     attitudes = [],
@@ -87,6 +88,13 @@ export const GraduateProfile = ({ data }: Props) => {
               {title}
             </h2>
           </motion.div>
+
+          <motion.p
+            variants={item}
+            className="max-w-lg text-xs leading-relaxed opacity-90 sm:text-sm 2xl:text-base"
+          >
+            {summary}
+          </motion.p>
 
           <motion.div
             variants={item}
