@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ImageModel } from "@/lib/shared/model";
 import { Icon } from "./Icon";
+import { Variants } from "motion";
+import { motion } from "motion/react";
 
 export interface DynamicCardProps {
   title: string;
@@ -13,6 +15,21 @@ export interface DynamicCardProps {
   subtitle?: string;
   badge?: string;
 }
+
+const item: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.2,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
 
 export const DynamicCard = ({
   title,
@@ -36,7 +53,13 @@ export const DynamicCard = ({
   };
 
   return (
-    <article className="group relative z-10 h-125 w-full overflow-hidden will-change-transform hover:z-20 lg:hover:shadow-2xl">
+    <motion.div
+      variants={item}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="group relative z-10 h-125 w-full overflow-hidden will-change-transform hover:z-20 lg:hover:shadow-2xl"
+    >
       <Link href={href}>
         <div className="absolute inset-0 transition-transform duration-500 lg:group-hover:scale-110 bg-linear-to-tr from-[#1e1e1e] via-[#3a1114] to-[#1e1e1e]">
           {src && (
@@ -92,6 +115,6 @@ export const DynamicCard = ({
           </div>
         </div>
       </Link>
-    </article>
+    </motion.div>
   );
 };
